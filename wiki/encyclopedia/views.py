@@ -16,5 +16,16 @@ def index(request):
         "entries": util.list_entries()
     })
 
-def entry():
-    return
+def entry(request, title):
+    
+    entryContent = MdToHtml(title)
+
+    if entryContent is not None:
+        return render(request, "encyclopedia/entry.html", {
+            "entryContent": entryContent
+        })
+
+    else:
+        return render(request, "encyclopedia/error.html", {
+            "title": title
+        })
