@@ -6,4 +6,13 @@
 
 {% block body %}
     <h1>New Page</h1>
+    
+    <form action="{% url 'new' %}" method="POST">
+        {% csrf_token %}
+        {{ inputs }}
+        {{title.label|linebreaks}}
+        {{content.label|linebreaks}}
+        <input type="submit" value="Add">
+    </form>
+    
 {% endblock %}
