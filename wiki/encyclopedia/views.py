@@ -56,3 +56,11 @@ def search(request):
             return render(request, "encyclopedia/search.html", {
                 "results": results
             })
+
+
+def NewPage(request):
+    if request.method == "POST":
+        return
+    
+    else:
+        return render(request, "encyclopedia/new.html")
