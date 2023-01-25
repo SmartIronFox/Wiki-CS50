@@ -51,6 +51,7 @@ def search(request):
 
         if entryContent != None:
             return render(request, "encyclopedia/entry.html", {
+                "title": entryName,
                 "entryContent": entryContent
             })
         
