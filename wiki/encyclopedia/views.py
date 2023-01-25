@@ -68,6 +68,9 @@ def search(request):
                 "results": results
             })
 
+    else:
+        return HttpResponseRedirect(reverse("index"))
+
 # A class for all the inputs required to make a new page
 class entryinputs(forms.Form,):
     title = forms.CharField(label="Title\n" , widget=forms.TextInput(attrs={"style":"display:block;"}))
